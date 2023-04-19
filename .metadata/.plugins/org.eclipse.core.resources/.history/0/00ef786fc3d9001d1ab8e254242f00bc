@@ -1,0 +1,14 @@
+/*
+ * exit.h
+ *
+ *  Created on: Apr 13, 2023
+ *      Author: sanketh
+ */
+
+#ifndef INC_EXIT_H_
+#define INC_EXIT_H_
+
+#include "stm32f4xx.h"
+void pc13_exit_init(void);
+
+#endif /* INC_EXIT_H_ */

@@ -1,0 +1,5 @@
+uart.c:4:6:uart2_init	1
+uart.c:31:6:uart2_write	2
+uart.c:42:6:uart_str	2
+uart.c:50:13:uart_set_baudrate	1
+uart.c:55:17:compute_uart_bd	1

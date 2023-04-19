@@ -1,0 +1,2 @@
+gpio.c:6:6:gpio_init	1
+gpio.c:14:6:gpio_toggle_led	1

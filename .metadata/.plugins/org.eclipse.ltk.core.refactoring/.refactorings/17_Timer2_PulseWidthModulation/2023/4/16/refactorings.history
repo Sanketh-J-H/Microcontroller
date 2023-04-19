@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;17_Timer2_PulseWidthModulation/Core/Src/Timer2_OutputCompare.c&apos; to &apos;Timer2_PulseWidthModulation.c&apos;" description="Rename resource &apos;Timer2_OutputCompare.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Src/Timer2_OutputCompare.c" name="Timer2_PulseWidthModulation.c" stamp="1681810434426" updateReferences="true"/>
+</session>

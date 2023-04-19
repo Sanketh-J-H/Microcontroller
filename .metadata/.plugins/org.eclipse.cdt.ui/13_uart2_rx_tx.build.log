@@ -1,0 +1,10 @@
+16:44:00 **** Incremental Build of configuration Debug for project 13_uart2_rx_tx ****
+make -j12 all 
+arm-none-eabi-size   13_uart2_rx_tx.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1148	     12	   1572	   2732	    aac	13_uart2_rx_tx.elf
+Finished building: default.size.stdout
+ 
+
+16:44:00 Build Finished. 0 errors, 0 warnings. (took 693ms)
+

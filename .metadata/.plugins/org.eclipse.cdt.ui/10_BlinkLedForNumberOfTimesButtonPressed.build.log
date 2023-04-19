@@ -1,0 +1,10 @@
+16:59:14 **** Incremental Build of configuration Debug for project 10_BlinkLedForNumberOfTimesButtonPressed ****
+make -j12 all 
+arm-none-eabi-size   10_BlinkLedForNumberOfTimesButtonPressed.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1036	     12	   1572	   2620	    a3c	10_BlinkLedForNumberOfTimesButtonPressed.elf
+Finished building: default.size.stdout
+ 
+
+16:59:15 Build Finished. 0 errors, 0 warnings. (took 625ms)
+

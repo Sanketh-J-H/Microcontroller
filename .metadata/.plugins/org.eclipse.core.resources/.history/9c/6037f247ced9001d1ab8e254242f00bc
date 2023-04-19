@@ -1,0 +1,19 @@
+#include "stm32f4xx.h"
+
+
+int main(void)
+{
+
+	pc13_exti_init();
+	pa5_out_init();
+
+	while(1)
+	{
+
+		EXTI15_10_IRQHandler();
+
+	}
+
+}
+
+

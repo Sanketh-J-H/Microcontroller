@@ -1,0 +1,2 @@
+../Core/Src/timer2.c:11:6:tim2_1hz_init	4	static
+../Core/Src/timer2.c:29:6:tim2_delay	4	static

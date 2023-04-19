@@ -1,0 +1,33 @@
+/*
+ * exit.c
+ *
+ *  Created on: Apr 13, 2023
+ *      Author: sanketh
+ */
+#define 	LINE13 		(1U<<13)
+#define 	GPIOCEN 	(1U<<2)
+#define 	SYSCFGEN	(1U<<14)
+
+void pc13_exit_init(void)
+{
+	//disable global interrupts
+	__disable_irq();
+
+	//enable clock access for GPIOC
+
+	//Set PC13 as input
+
+	//Enable clock access to SYSCFG
+
+	//Select PORTC for EXTI13
+
+	//Unmask EXTI13
+
+	//Select falling ecge trigger
+
+	//Enable EXTI13 line in NVIC
+	NVIC_EnableIRQ(EXTI15_10_TRQn);
+
+	//
+}
+

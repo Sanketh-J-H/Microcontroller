@@ -1,0 +1,5 @@
+gpio.c:4:6:gpio_init_output	1
+gpio.c:11:6:gpio_set_output_high	1
+gpio.c:16:6:gpio_set_output_low	1
+gpio.c:21:6:gpio_init_input	1
+gpio.c:27:5:gpio_read_input	1

@@ -1,0 +1,5 @@
+../Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Core/Src/exit.c:16:6:pc13_exit_init	8	static,ignoring_inline_asm
+../Core/Src/exit.c:52:6:pa5_out_init	4	static
+../Core/Src/exit.c:62:6:EXTI15_10_IRQHandler	8	static
+../Core/Src/exit.c:74:13:exti_callback	4	static

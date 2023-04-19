@@ -1,0 +1,2 @@
+../Core/Src/led.c:6:6:LED_blink	16	static
+../Core/Src/led.c:19:6:LED_init	4	static

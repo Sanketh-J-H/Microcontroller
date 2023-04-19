@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;12_uart_rx/Core/Inc/systic.h&apos; to &apos;systick.h&apos;" description="Rename resource &apos;systic.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/systic.h" name="systick.h" stamp="1681190659035" updateReferences="true"/>
+</session>

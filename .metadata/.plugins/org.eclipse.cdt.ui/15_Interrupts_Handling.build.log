@@ -1,0 +1,10 @@
+15:14:24 **** Incremental Build of configuration Debug for project 15_Interrupts_Handling ****
+make -j12 all 
+arm-none-eabi-size   15_Interrupts_Handling.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1172	     12	   1572	   2756	    ac4	15_Interrupts_Handling.elf
+Finished building: default.size.stdout
+ 
+
+15:14:24 Build Finished. 0 errors, 0 warnings. (took 623ms)
+

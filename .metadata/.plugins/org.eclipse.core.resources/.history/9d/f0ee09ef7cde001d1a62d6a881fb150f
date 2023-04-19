@@ -1,0 +1,10 @@
+#include "Timer3_InputCapture.h"
+
+int main()
+{
+
+	while(1)
+	{
+		tim3_pa6_input_capture();
+	}
+}

@@ -1,0 +1,6 @@
+1680606681880	Delete resource '02_led_blink/led.c'
+1680608252764	Delete resource '02_led_blink/Core/Inc/led.h'
+1680608267061	Delete resource '02_led_blink/Core/Src/delay.c'
+1680690915283	Rename resource 'Empty_project'
+1680690931373	Rename resource '01_Empty_project'
+1680691693390	Delete resource '08_emptyProjectLedBlinkMultipleFiles/Src/stm32fxx_gpio.h'

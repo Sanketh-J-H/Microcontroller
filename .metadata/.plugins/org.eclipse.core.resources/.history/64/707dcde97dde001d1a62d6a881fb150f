@@ -1,0 +1,26 @@
+#include "Timer3_InputCapture.h"
+
+int main()
+{
+
+	while (1)
+	    {
+	        // Wait until edge is captured
+	        while (!(TIM3->SR & TIM_SR_CC1IF))
+	        {
+	            // Do nothing
+	        }
+
+	        // Read captured value
+	        timestamp = TIM3->CCR1;
+
+	        // Clear CC1 interrupt flag
+	        TIM3->SR &= ~TIM_SR_CC1IF;
+
+	        // Do something with the captured timestamp
+	        // ...
+
+	        // Reset the timer value to 0
+	        TIM3->CNT = 0;
+	    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;16_Timers_BlinkLED_UsingTimer_1/Core/Inc/timer2.h&apos; to &apos;timer1.h&apos;" description="Rename resource &apos;timer2.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/timer2.h" name="timer1.h" stamp="1681731023390" updateReferences="true"/>
+</session>

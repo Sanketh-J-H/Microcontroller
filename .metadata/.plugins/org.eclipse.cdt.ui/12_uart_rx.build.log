@@ -1,0 +1,14 @@
+12:34:50 **** Incremental Build of configuration Debug for project 12_uart_rx ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+../Core/Src/usart.c:13:1: warning: "/*" within comment [-Wcomment]
+   13 | /*------------------------------------------------------------------
+      |  
+../Core/Src/usart.c:32:2: error: expected identifier or '(' before '/' token
+   32 | */
+      |  ^
+make: *** [Core/Src/subdir.mk:43: Core/Src/usart.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+12:34:51 Build Failed. 2 errors, 1 warnings. (took 674ms)
+

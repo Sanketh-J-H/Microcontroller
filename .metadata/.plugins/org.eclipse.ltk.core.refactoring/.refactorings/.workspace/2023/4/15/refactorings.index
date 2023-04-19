@@ -1,0 +1,7 @@
+1681120639023	Rename resource '01_uart_tx'
+1681141282187	Delete resource '12_uart_rx'
+1681145146477	Delete resource '01_led_toggle'
+1681185565829	Delete resource '12_uartRx'
+1681190611310	Delete resource '12_uart_rx/Core/Inc/systich'
+1681197010266	Rename resource '12_uart_rx'
+1681236408586	Delete resource '12_uart2_rx'
