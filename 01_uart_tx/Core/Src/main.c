@@ -1,6 +1,7 @@
 #include "stm32f4xx.h"
 #include <stdint.h>
 
+
 #define    GPIOAEN     (1U<<0)
 #define    PA2MOD      (2U<<4)
 #define    PA2AF       (7U<<8)
