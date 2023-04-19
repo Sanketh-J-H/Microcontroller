@@ -1,4 +1,4 @@
-14:37:11 **** Incremental Build of configuration Debug for project 17_Timer2_PulseWidthModulation ****
+22:30:15 **** Incremental Build of configuration Debug for project 17_Timer2_PulseWidthModulation ****
 make -j12 all 
 arm-none-eabi-size   17_Timer2_PulseWidthModulation.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   17_Timer2_PulseWidthModulation.elf
 Finished building: default.size.stdout
  
 
-14:37:11 Build Finished. 0 errors, 0 warnings. (took 616ms)
+22:30:16 Build Finished. 0 errors, 0 warnings. (took 612ms)
 

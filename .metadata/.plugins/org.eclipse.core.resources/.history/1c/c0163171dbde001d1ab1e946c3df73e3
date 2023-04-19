@@ -1,0 +1,15 @@
+#include "uart1ReadWrite.h"
+
+
+int main()
+{
+
+
+    uart1_init();
+    while(1)
+    {
+    	char c[10] = uart1_read();
+        uart_str(c);
+    }
+    return 0;
+}

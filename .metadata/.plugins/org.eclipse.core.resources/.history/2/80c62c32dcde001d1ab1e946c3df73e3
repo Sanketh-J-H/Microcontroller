@@ -1,0 +1,20 @@
+#include "uart1ReadWrite.h"
+
+
+int main()
+{
+
+	char c;
+    uart1_init();
+    gpio_init();
+     gpio_set();
+  gpio_reset();
+    while(1)
+    {
+    	c = uart1_read();
+    	if(c=='N')
+
+    	uart1_write(c);
+    }
+    return 0;
+}

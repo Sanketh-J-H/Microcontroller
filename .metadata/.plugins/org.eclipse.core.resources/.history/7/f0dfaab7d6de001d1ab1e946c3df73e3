@@ -1,0 +1,13 @@
+/*
+ * uart1ReadWrite.h
+ *
+ *  Created on: Apr 19, 2023
+ *      Author: sanketh
+ */
+
+#ifndef INC_UART1READWRITE_H_
+#define INC_UART1READWRITE_H_
+
+
+
+#endif /* INC_UART1READWRITE_H_ */
