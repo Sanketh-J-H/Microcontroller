@@ -1,0 +1,15 @@
+#include "adc.h"
+
+uint16_t count=0;
+
+int main()
+{
+	pa1_adc_init();
+	while(1)
+	{
+		start_converstion();
+		count=adc_read();
+	}
+
+	return 0;
+}
