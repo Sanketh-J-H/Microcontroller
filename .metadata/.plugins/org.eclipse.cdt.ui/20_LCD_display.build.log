@@ -1,10 +1,28 @@
-16:32:29 **** Incremental Build of configuration Debug for project 20_LCD_display ****
+11:53:07 **** Incremental Build of configuration Debug for project 20_LCD_display ****
 make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:19:2: warning: implicit declaration of function 'LCD_string' [-Wimplicit-function-declaration]
+   19 |  LCD_string("Welcome",7);
+      |  ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:28:6: warning: conflicting types for 'LCD_string'
+   28 | void LCD_string(unsigned char str[200],unsigned int num){
+      |      ^~~~~~~~~~
+../Core/Src/main.c:19:2: note: previous implicit declaration of 'LCD_string' was here
+   19 |  LCD_string("Welcome",7);
+      |  ^~~~~~~~~~
+arm-none-eabi-gcc -o "20_LCD_display.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/20_LCD_display/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="20_LCD_display.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 20_LCD_display.elf
+ 
 arm-none-eabi-size   20_LCD_display.elf 
+arm-none-eabi-objdump -h -S  20_LCD_display.elf  > "20_LCD_display.list"
    text	   data	    bss	    dec	    hex	filename
-   1264	     12	   1572	   2848	    b20	20_LCD_display.elf
+   1316	     12	   1572	   2900	    b54	20_LCD_display.elf
 Finished building: default.size.stdout
  
+Finished building: 20_LCD_display.list
+ 
 
-16:32:29 Build Finished. 0 errors, 0 warnings. (took 622ms)
+11:53:08 Build Finished. 0 errors, 2 warnings. (took 733ms)
 
