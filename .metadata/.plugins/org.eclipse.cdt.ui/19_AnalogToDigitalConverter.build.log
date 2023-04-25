@@ -1,17 +1,10 @@
-16:47:33 **** Incremental Build of configuration Debug for project 19_AnalogToDigitalConverter ****
+14:26:36 **** Incremental Build of configuration Debug for project 19_AnalogToDigitalConverter ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "19_AnalogToDigitalConverter.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/19_AnalogToDigitalConverter/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="19_AnalogToDigitalConverter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 19_AnalogToDigitalConverter.elf
- 
 arm-none-eabi-size   19_AnalogToDigitalConverter.elf 
-arm-none-eabi-objdump -h -S  19_AnalogToDigitalConverter.elf  > "19_AnalogToDigitalConverter.list"
    text	   data	    bss	    dec	    hex	filename
    1104	     12	   1580	   2696	    a88	19_AnalogToDigitalConverter.elf
 Finished building: default.size.stdout
  
-Finished building: 19_AnalogToDigitalConverter.list
- 
 
-16:47:34 Build Finished. 0 errors, 0 warnings. (took 776ms)
+14:26:37 Build Finished. 0 errors, 0 warnings. (took 775ms)
 

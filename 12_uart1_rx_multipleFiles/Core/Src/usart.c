@@ -19,7 +19,7 @@ void USART2_init(void)
 {
     RCC->AHB1ENR |= 1;       /* Enable GPIOA clock */
     RCC->APB1ENR |= 0x20000; /* Enable USART2 clock */
-    USART2->BRR = 0x008B;    /* 115200 baud @ 16 MHz */
+    USART2->BRR = 0x682;    /* 115200 baud @ 16 MHz */
     USART2->CR1 = 0x0004;    /* enable Rx, 8-bit data */
     USART2->CR2 = 0x0000;    /* 1 stop  bit */
     USART2->CR3 = 0x0000;    /* no flow control */

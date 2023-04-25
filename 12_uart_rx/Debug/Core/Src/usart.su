@@ -1,0 +1,2 @@
+../Core/Src/usart.c:9:6:USART1_init	4	static
+../Core/Src/usart.c:28:6:USART1_read	4	static

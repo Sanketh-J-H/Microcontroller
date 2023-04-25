@@ -1,0 +1,17 @@
+22:24:08 **** Incremental Build of configuration Debug for project 12_uart1_rx_multipleFiles ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "12_uart1_rx_multipleFiles.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/12_uart1_rx_multipleFiles/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="12_uart1_rx_multipleFiles.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 12_uart1_rx_multipleFiles.elf
+ 
+arm-none-eabi-size   12_uart1_rx_multipleFiles.elf 
+arm-none-eabi-objdump -h -S  12_uart1_rx_multipleFiles.elf  > "12_uart1_rx_multipleFiles.list"
+   text	   data	    bss	    dec	    hex	filename
+   1252	     12	   1572	   2836	    b14	12_uart1_rx_multipleFiles.elf
+Finished building: default.size.stdout
+ 
+Finished building: 12_uart1_rx_multipleFiles.list
+ 
+
+22:24:09 Build Finished. 0 errors, 0 warnings. (took 750ms)
+
