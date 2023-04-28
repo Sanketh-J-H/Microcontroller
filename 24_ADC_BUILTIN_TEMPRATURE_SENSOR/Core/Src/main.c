@@ -1,0 +1,49 @@
+#include "stm32f4xx.h"
+#include <stdio.h>
+double volt, temp;
+
+//void USART2_init(void);
+//int USART2_write(int c);
+
+int main(void) {
+	int data;
+
+
+	RCC->AHB1ENR |= 1; /* enable GPIOA clock */
+
+	/* setup TIM2 */
+	RCC->APB1ENR |= 1; /* enable TIM2 clock */
+	TIM2->PSC = 1600 - 1; /* divided by 1600 */
+	TIM2->ARR = 10000 - 1; /* divided by 10000, sample at 1 Hz */
+	TIM2->CNT = 0;
+	TIM2->CCMR1 = 0x00006800; /* pwm1 mode, preload enable */
+
+	TIM2->CCER = 0x0010; /*ch2 enable */
+	TIM2->CCR2 = 50 - 1;
+	TIM2->CR1 = 1; /* enable timer2 */
+
+
+
+	/* setup ADC1 */
+	RCC->APB2ENR |= 0x00000100; /* enable ADC1 clock */
+	/* turn on the temp sensor */
+
+	ADC->CCR |= 0x800000;
+	ADC->CCR &= ~0x400000; /* VBATE must be disabled for temp sensor */
+
+	/* configure A to D converter */
+	ADC1->SMPR1 = 0x4000000; /* sampling time minimum 10 us */
+	ADC1->SQR3 = 18; /* ch18 - internal temp sensor, single channel */
+	ADC1->CR2 = 0x13000000; /* trigger: EXTEN rising edge, EXTSEL 3 = tim2.2*/
+	ADC1->CR2 |= 1; /* enable ADC1 */
+
+	while(1) {
+			while(!(ADC1->SR & 2)) {}
+			data = ADC1->DR;
+
+			/* Temperature (in °C) = {(VSENSE – V25) / Avg_Slope} + 25 */ /* V25 = 0.76V, slope = 2.5 mV/C */
+
+			volt = (double)data / 4095 * 3.3; /* convert ADC output to voltage*/
+			temp = (volt - 0.76) / 0.0025 + 25; /* convert voltage totemperature C */
+}
+}
