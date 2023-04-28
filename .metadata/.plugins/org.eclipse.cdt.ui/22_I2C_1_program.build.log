@@ -1,0 +1,28 @@
+10:15:06 **** Incremental Build of configuration Debug for project 22_I2C_1_program ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/I2C.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/I2C.d" -MT"Core/Src/I2C.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/I2C.o"
+../Core/Src/I2C.c: In function 'I2C1_byteRead':
+../Core/Src/I2C.c:62:15: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+   62 |  volatile int temp;
+      |               ^~~~
+../Core/Src/I2C.c: In function 'I2C1_byteWrite':
+../Core/Src/I2C.c:145:14: warning: assignment to 'uint32_t' {aka 'volatile long unsigned int'} from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  145 |     I2C1->DR = data;
+      |              ^
+../Core/Src/I2C.c:118:18: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  118 |     volatile int temp;
+      |                  ^~~~
+arm-none-eabi-gcc -o "22_I2C_1_program.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/22_I2C_1_program/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="22_I2C_1_program.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 22_I2C_1_program.elf
+ 
+arm-none-eabi-size   22_I2C_1_program.elf 
+arm-none-eabi-objdump -h -S  22_I2C_1_program.elf  > "22_I2C_1_program.list"
+   text	   data	    bss	    dec	    hex	filename
+   1500	     12	   1572	   3084	    c0c	22_I2C_1_program.elf
+Finished building: default.size.stdout
+ 
+Finished building: 22_I2C_1_program.list
+ 
+
+10:15:07 Build Finished. 0 errors, 3 warnings. (took 770ms)
+

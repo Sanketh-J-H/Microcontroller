@@ -1,0 +1,78 @@
+#include "adc.h"
+#include "stm32f4xx.h"
+#include <stm32f4xx_hal_adc.h>
+#define TEMP_SENSOR_CHANNEL 16
+#define ADC_RESOLUTION_12BIT 0
+#define ADC_SAMPLING_TIME_480CYCLES 7
+#define ADC_CLOCK_PRESCALER_DIV8 3
+
+void temp_sensor_init(void)
+{
+  // Enable clock access to GPIOA and ADC1
+  RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+  RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+
+  // Set PA0 to analog mode
+  GPIOA->MODER |= GPIO_MODER_MODE0_Msk;
+
+  // Configure ADC clock prescaler to 8
+  ADC1->CR2 |= ADC_CR2_ADON;
+  ADC1->CR2 |= (ADC_CR2_AD | ADC_CR2_ADIV1); // Prescaler = 8
+
+  // Set ADC resolution to 12-bit
+  ADC1->CR1 |= (ADC_CR1_RES_0 | ADC_CR1_RES_1); // 12-bit resolution
+
+  // Set ADC sampling time to 480 cycles for channel 16
+  ADC1->SMPR1 |= (ADC_SMPR1_SMP16_2 | ADC_SMPR1_SMP16_1 | ADC_SMPR1_SMP16_0); // 480 cycles
+
+  // Configure ADC channel to use temperature sensor
+  ADC1->SQR3 |= TEMP_SENSOR_CHANNEL;
+
+  // Enable the ADC
+  ADC1->CR2 |= ADC_CR2_ADON;
+}
+
+uint32_t temp_sensor_read(void)
+{
+  // Start the conversion
+  ADC1->CR2 |= ADC_CR2_SWSTART;
+
+  // Wait for conversion to complete
+  while (!(ADC1->SR & ADC_SR_EOC));
+
+  // Read the converted value
+  return ADC1->DR;
+}
+
+
+uint16_t adc_value=0;
+// Constants for ADC and temperature conversion
+const float ADC_REFERENCE_VOLTAGE = 5.0;  // ADC reference voltage in volts
+const float ADC_MAX_VALUE = 4095.0;  // Maximum ADC value
+const float TEMPERATURE_SLOPE = 0.1;  // Temperature sensor slope in degrees C per mV
+const float TEMPERATURE_OFFSET = 0.0;  // Temperature sensor offset in degrees C
+float temperature =0;
+float voltage = 0;
+
+int main()
+{
+	//pa1_adc_init();
+	temp_sensor_init();
+	//start_converstion();
+	while(1)
+	{
+
+		adc_value=temp_sensor_read();
+		// Convert the ADC value to voltage
+		voltage = adc_value * ADC_REFERENCE_VOLTAGE / ADC_MAX_VALUE;
+
+		// Convert the voltage to temperature in Celsius
+		temperature = voltage / TEMPERATURE_SLOPE - TEMPERATURE_OFFSET;
+
+	}
+
+	return 0;
+}
+
+
+

@@ -1,0 +1,21 @@
+13:22:11 **** Incremental Build of configuration Debug for project 23_RTC_EEPROM_interfacing_with_I2C1 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'I2C1_burstRead':
+../Core/Src/main.c:53:15: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   53 |  volatile int tmp;
+      |               ^~~
+arm-none-eabi-gcc -o "23_RTC_EEPROM_interfacing_with_I2C1.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/23_RTC_EEPROM_interfacing_with_I2C1/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="23_RTC_EEPROM_interfacing_with_I2C1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 23_RTC_EEPROM_interfacing_with_I2C1.elf
+ 
+arm-none-eabi-size   23_RTC_EEPROM_interfacing_with_I2C1.elf 
+arm-none-eabi-objdump -h -S  23_RTC_EEPROM_interfacing_with_I2C1.elf  > "23_RTC_EEPROM_interfacing_with_I2C1.list"
+   text	   data	    bss	    dec	    hex	filename
+   1476	     12	   1572	   3060	    bf4	23_RTC_EEPROM_interfacing_with_I2C1.elf
+Finished building: default.size.stdout
+ 
+Finished building: 23_RTC_EEPROM_interfacing_with_I2C1.list
+ 
+
+13:22:12 Build Finished. 0 errors, 1 warnings. (took 777ms)
+

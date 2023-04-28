@@ -1,0 +1,55 @@
+#include "adc.h"
+#include "stm32f4xx.h"
+
+uint16_t adc_value=0;
+// Constants for ADC and temperature conversion
+const float ADC_REFERENCE_VOLTAGE = 5.0;  // ADC reference voltage in volts
+const float ADC_MAX_VALUE = 4095.0;  // Maximum ADC value
+const float TEMPERATURE_SLOPE = 0.1;  // Temperature sensor slope in degrees C per mV
+const float TEMPERATURE_OFFSET = 0.0;  // Temperature sensor offset in degrees C
+float temperature =0;
+float voltage = 0;
+
+int main()
+{
+	pa1_adc_init();
+	start_converstion();
+	/* setup ADC1 */
+	RCC->APB2ENR |= 0x00000100; /* enable ADC1 clock */
+	/* turn on the temp sensor */
+	ADC->CCR |= 0x800000;
+	ADC->CCR &= ~0x400000; /* VBATE must be disabled for temp sensor */
+
+	/* configure A to D converter */
+	ADC1->SMPR1 = 0x4000000; /* sampling time minimum 10 us */
+	ADC1->SQR3 = 18; /* ch18 - internal temp sensor, single channel */
+	ADC1->CR2 = 0x13000000; /* trigger: EXTEN rising edge, EXTSEL 3 = tim2.2*/
+	ADC1->CR2 |= 1; /* enable ADC1 */
+
+	while(1) {
+
+
+				/* Temperature (in °C) = {(VSENSE – V25) / Avg_Slope} + 25 / / V25 = 0.76V, slope = 2.5 mV/C */
+
+
+	while(1)
+	{
+		while(!(ADC1->SR & 2)) {}
+		adc_value = ADC1->DR;
+		//adc_value=adc_read();
+		// Convert the ADC value to voltage
+		voltage = (double)data / 4095 * 3.3; /* convert ADC output to voltage*/
+
+		//voltage = adc_value * ADC_REFERENCE_VOLTAGE / ADC_MAX_VALUE;
+
+		// Convert the voltage to temperature in Celsius
+		temperature = (volt - 0.76) / 0.0025 + 25; /* convert voltage totemperature C */
+		//temperature = voltage / TEMPERATURE_SLOPE - TEMPERATURE_OFFSET;
+
+	}
+
+	return 0;
+}
+
+
+

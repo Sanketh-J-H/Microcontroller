@@ -1,4 +1,5 @@
 #include "adc.h"
+#include "stm32f4xx.h"
 
 uint16_t adc_value=0;
 // Constants for ADC and temperature conversion
@@ -13,6 +14,7 @@ int main()
 {
 	pa1_adc_init();
 	start_converstion();
+
 	while(1)
 	{
 
@@ -27,3 +29,6 @@ int main()
 
 	return 0;
 }
+
+
+

@@ -1,0 +1,23 @@
+#include <stdint.h>
+#include "I2C.h"
+
+int main()
+{
+    // Initialize I2C1 peripheral with appropriate clock speed and addressing mode
+	I2C1_init();
+    // Define slave address and register address for SHT EVA sensor
+    uint8_t slave_addr = 0x40; // default address for SHT EVA sensor
+    uint8_t reg_addr = 0xF3;   // register address for temperature measurement
+
+    // Define buffer to hold data read from sensor
+    uint8_t data = 0;
+
+    // Read data from SHT EVA sensor
+    while(1)
+    {
+    	temperature= I2C1_byteRead(slave_addr, reg_addr, &data);
+    }
+    // Do something with data (e.g. convert to temperature reading)
+
+    return 0;
+}

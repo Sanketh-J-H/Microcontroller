@@ -1,0 +1,56 @@
+#include <stdint.h>
+#include "I2C.h"
+#include <stdio.h>
+
+int main(void)
+{
+    // Initialize the I2C peripheral and configure it for 100 kHz operation
+    I2C1_init();
+
+    // Sensor address and memory address for temperature data
+    char saddr = 0x40;  // Sensor address (7-bit)
+    char maddr = 0xF3;  // Memory address for temperature data
+    char data[2];
+    // Send a start condition and write the memory address to the sensor
+    I2C1_byteWrite(saddr, maddr,data);
+
+    // Wait for the byte transfer to complete
+    while (!(I2C1->SR1 & SR1_BTF)) {}
+
+    // Send a repeated start condition and read 2 bytes of data from the sensor
+
+    I2C1_byteRead(saddr,maddr, data);
+
+    // Wait for the byte transfer to complete
+    while (!(I2C1->SR1 & SR1_BTF)) {}
+
+    // Convert the raw data to a temperature value
+    float temp = (175.72 * (data[0] << 8 | data[1]) / 65536.0) - 46.85;
+
+    // Sensor address and memory address for humidity data
+    maddr = 0xE5;  // Memory address for humidity data
+
+    // Send a start condition and write the memory address to the sensor
+    I2C1_byteWrite(saddr, maddr,data);
+
+    // Wait for the byte transfer to complete
+    while (!(I2C1->SR1 & SR1_BTF)) {}
+
+    // Send a repeated start condition and read 2 bytes of data from the sensor
+    I2C1_byteRead(saddr,maddr, data);
+
+    // Wait for the byte transfer to complete
+    while (!(I2C1->SR1 & SR1_BTF)) {}
+
+    // Convert the raw data to a humidity value
+    float humidity = (125.0 * (data[0] << 8 | data[1]) / 65536.0) - 6.0;
+
+    // Print the temperature and humidity values
+    printf("Temperature: %0.2f C\r\n", temp);
+    printf("Humidity: %0.2f %%\r\n", humidity);
+
+    // Endless loop
+    while (1) {
+        // Do nothing
+    }
+}

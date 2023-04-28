@@ -1,0 +1,10 @@
+main.c:22:5:main	1
+main.c:62:6:pBlueLedController	1
+main.c:74:6:pRedLedController	1
+main.c:85:6:pGreenLedController	1
+main.c:98:5:__io_putchar	1
+main.c:104:6:SystemClock_Config	3
+main.c:146:13:MX_USART2_UART_Init	2
+main.c:164:13:MX_GPIO_Init	1
+main.c:172:6:HAL_TIM_PeriodElapsedCallback	2
+main.c:185:6:Error_Handler	1
