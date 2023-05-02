@@ -1,5 +1,9 @@
 //org.eclipse.ui.commands/state/com.st.stm32cube.ide.mcu.buildanalyzer.showstate/org.eclipse.ui.commands.radioState=human
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+CONTENT_ASSIST_BACKGROUND_COLOR=0,0,0
+CONTENT_ASSIST_FOREGROUND_COLOR=238,238,236
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc
+ColorsAndFontsPreferencePage.selectedElement=CCONTENT_ASSIST_BACKGROUND_COLOR
 UIActivities.org.eclipse.cdt.debug.dsfgdbActivity=true
 eclipse.preferences.version=1
 org.eclipse.cdt.debug.ui.ModulesDetailPaneFont=1|Monospace|14.0|0|GTK|1|;
@@ -21,4 +25,5 @@ org.eclipse.ui.workbench.ACTIVE_TAB_BG_START=255,255,255
 org.eclipse.ui.workbench.ACTIVE_TAB_TEXT_COLOR=61,61,61
 org.eclipse.ui.workbench.INACTIVE_TAB_BG_END=246,245,244
 org.eclipse.ui.workbench.INACTIVE_TAB_BG_START=246,245,244
+org.eclipse.ui.workbench.texteditor.blockSelectionModeFont=1|Mukti Narrow|10.0|3|GTK|1|;
 terminal.views.view.font.definition=1|Monospace|14.0|0|GTK|1|;
