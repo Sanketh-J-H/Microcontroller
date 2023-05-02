@@ -1,0 +1,10 @@
+main.c:33:6:cmd1	3
+main.c:56:6:cmd2	1
+main.c:63:6:cmd3	1
+main.c:71:5:main	3
+main.c:91:6:uart1_init	1
+main.c:131:13:uart_set_baudrate	1
+main.c:136:17:compute_uart_bd	1
+main.c:144:6:uart1_read	2
+main.c:155:6:uart1_write	2
+main.c:165:6:uart_str_wr	2

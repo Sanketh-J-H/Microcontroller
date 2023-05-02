@@ -1,0 +1,12 @@
+../Core/Src/main.c:34:6:cmd1	8	static
+../Core/Src/main.c:42:6:cmd2	8	static
+../Core/Src/main.c:50:6:cmd3	8	static
+../Core/Src/main.c:58:6:cmd4	8	static
+../Core/Src/main.c:79:5:main	8	static
+../Core/Src/main.c:92:6:delayMs	16	static
+../Core/Src/main.c:98:6:uart1_init	8	static
+../Core/Src/main.c:138:13:uart_set_baudrate	24	static
+../Core/Src/main.c:143:17:compute_uart_bd	16	static
+../Core/Src/main.c:151:6:uart1_read	4	static
+../Core/Src/main.c:161:6:uart1_write	16	static
+../Core/Src/main.c:170:6:uart_str_wr	24	static

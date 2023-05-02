@@ -1,0 +1,12 @@
+main.c:34:6:cmd1	1
+main.c:42:6:cmd2	1
+main.c:50:6:cmd3	1
+main.c:58:6:cmd4	1
+main.c:79:5:main	1
+main.c:92:6:delayMs	2
+main.c:98:6:uart1_init	1
+main.c:138:13:uart_set_baudrate	1
+main.c:143:17:compute_uart_bd	1
+main.c:151:6:uart1_read	2
+main.c:161:6:uart1_write	2
+main.c:170:6:uart_str_wr	2
