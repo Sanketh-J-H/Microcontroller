@@ -1,0 +1,17 @@
+14:25:19 **** Incremental Build of configuration Debug for project SPI INTERFACING WITH RFID AND LCD ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/RFID.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/RFID.d" -MT"Core/Src/RFID.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/RFID.o"
+arm-none-eabi-gcc -o "SPI INTERFACING WITH RFID AND LCD.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/sanketh/data/LinuxTraining/STM32CubeIDE/workspace_1.12.0/SPI INTERFACING WITH RFID AND LCD/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI INTERFACING WITH RFID AND LCD.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SPI INTERFACING WITH RFID AND LCD.elf
+ 
+arm-none-eabi-size   SPI\ INTERFACING\ WITH\ RFID\ AND\ LCD.elf 
+arm-none-eabi-objdump -h -S  SPI\ INTERFACING\ WITH\ RFID\ AND\ LCD.elf  > "SPI INTERFACING WITH RFID AND LCD.list"
+   text	   data	    bss	    dec	    hex	filename
+   9796	    112	   1600	  11508	   2cf4	SPI INTERFACING WITH RFID AND LCD.elf
+Finished building: default.size.stdout
+ 
+Finished building: SPI INTERFACING WITH RFID AND LCD.list
+ 
+
+14:25:20 Build Finished. 0 errors, 0 warnings. (took 818ms)
+

@@ -1,0 +1,6 @@
+i2c.c:5:6:i2c_init	1
+i2c.c:21:8:i2c_readByte	17
+i2c.c:47:8:i2c_writeByte	13
+i2c.c:65:8:i2c_WriteMulti	14
+i2c.c:90:8:i2c_ReadMulti	21
+i2c.c:134:6:i2c_bus_scan	6
